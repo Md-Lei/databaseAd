@@ -25,13 +25,7 @@ if (isset($_POST['btnDeleteUser'])) {
   $userID = $_POST['userID'];
 
   $deleteQuery = "DELETE FROM userInfo WHERE userID = '$userID'";
-
-  if (mysqli_query($conn, $deleteQuery)) {
-    header("Location: index.php");
-    exit();
-  } else {
-    echo "<script>alert('Error deleting user: " . mysqli_error($conn) . "');</script>";
-  }
+  executeQuery($deleteQuery);
 }
 
 $query = "
