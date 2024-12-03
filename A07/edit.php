@@ -48,42 +48,45 @@ if (isset($_POST['btnUpdateUser'])) {
 </head>
 
 <body>
-    <div class="container-fluid header">
+    <div class="container-fluid header ">
         <h1>Edit Information</h1>
     </div>
     <div class="container">
-        <form method="POST" action="">
-            <input type="hidden" name="userID" value="<?php echo $user['userID']; ?>">
-            <div class="mb-3"><label for="firstname" class="form-label">First Name</label><input type="text"
-                    class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>"
-                    required></div>
-            <div class="mb-3"><label for="lastName" class="form-label">Last Name</label><input type="text"
-                    class="form-control" id="lastName" name="lastName" value="<?php echo $user['lastName']; ?>"
-                    required></div>
-            <div class="mb-3"><label for="birthDate" class="form-label">Birth Date</label><input type="date"
-                    class="form-control" id="birthDate" name="birthDate" value="<?php echo $user['birthDate']; ?>"
-                    required></div>
-            <div class="mb-3"><label for="addressID" class="form-label">Address ID</label><input type="number"
-                    class="form-control" id="addressID" name="addressID" value="<?php echo $user['addressID']; ?>"
-                    required></div>
-            <div style="display: flex; justify-content: flex-end;">
-                <button type="submit" name="btnUpdateUser" class="btn btn-primary">Update User</button>
+        <div class="col-6">
+            <form method="POST" action="">
+                <input type="hidden" name="userID" value="<?php echo $user['userID']; ?>">
+                <div class="mb-3"><label for="firstname" class="form-label">First Name</label><input type="text"
+                        class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>"
+                        required></div>
+                <div class="mb-3"><label for="lastName" class="form-label">Last Name</label><input type="text"
+                        class="form-control" id="lastName" name="lastName" value="<?php echo $user['lastName']; ?>"
+                        required></div>
+                <div class="mb-3"><label for="birthDate" class="form-label">Birth Date</label><input type="date"
+                        class="form-control" id="birthDate" name="birthDate" value="<?php echo $user['birthDate']; ?>"
+                        required></div>
+                <div class="mb-3"><label for="addressID" class="form-label">Address ID</label><input type="number"
+                        class="form-control" id="addressID" name="addressID" value="<?php echo $user['addressID']; ?>"
+                        required></div>
+                <div style="display: flex; justify-content: flex-end;">
+                    <button type="submit" name="btnUpdateUser" class="btn btn-primary">Update User</button>
+                </div>
+
+            </form>
+            <div class="col-6">
+                <div class=" card p-4 mt-4">
+                    <h6>Available Address IDs:</h6>
+                    <ul class="address-list">
+                        <li>17 - Tanauan City, Batangas</li>
+                        <li>18 - Lipa City, Batangas</li>
+                        <li>19 - Dasmarinas, Cavite</li>
+                        <li>20 - Bacoor, Cavite</li>
+                        <li>21 - Lucena City, Quezon</li>
+                        <li>22 - Tayabas City, Quezon</li>
+                        <li>23 - Santa Rosa, Laguna</li>
+                        <li>24 - Calamba, Laguna</li>
+                    </ul>
+                </div>
             </div>
-
-
-        </form>
-        <div class=" card p-4 mt-4">
-            <h6>Available Address IDs:</h6>
-            <ul class="address-list">
-                <li>17 - Tanauan City, Batangas</li>
-                <li>18 - Lipa City, Batangas</li>
-                <li>19 - Dasmarinas, Cavite</li>
-                <li>20 - Bacoor, Cavite</li>
-                <li>21 - Lucena City, Quezon</li>
-                <li>22 - Tayabas City, Quezon</li>
-                <li>23 - Santa Rosa, Laguna</li>
-                <li>24 - Calamba, Laguna</li>
-            </ul>
         </div>
     </div>
 </body>
