@@ -1,34 +1,35 @@
 <?php
 include("connect.php");
 
-$airlineNameFilter = $_GET['airlineName'] ?? '';
-$aircraftTypeFilter = $_GET['aircraftType'] ?? '';
-$sort = $_GET['sort'] ?? '';
-$order = $_GET['order'] ?? '';
+
+$airlineNameFilter = $_GET['airlineName'];
+$aircraftTypeFilter = $_GET['aircraftType'];
+$sort = $_GET['sort'];
+$order = $_GET['order'];
 
 $airportQuery = "SELECT pilotName, aircraftType, flightNumber, departureDatetime, arrivalDatetime, flightDurationMinutes, airlineName, passengerCount FROM flightlogs";
 
 if ($airlineNameFilter != '' || $aircraftTypeFilter != '') {
-    $airportQuery .= " WHERE";
+    $airportQuery = $airportQuery ." WHERE";
 
     if ($airlineNameFilter != '') {
-        $airportQuery .= " airlineName='$airlineNameFilter'";
+        $airportQuery = $airportQuery . " airlineName='$airlineNameFilter'";
     }
 
     if ($airlineNameFilter != '' && $aircraftTypeFilter != '') {
-        $airportQuery .= " AND";
+        $airportQuery = $airportQuery . " AND";
     }
 
     if ($aircraftTypeFilter != '') {
-        $airportQuery .= " aircraftType='$aircraftTypeFilter'";
+        $airportQuery = $airportQuery . " aircraftType='$aircraftTypeFilter'";
     }
 }
 
 if ($sort != '') {
-    $airportQuery .= " ORDER BY $sort";
+    $airportQuery = $airportQuery . " ORDER BY $sort";
 
     if ($order != '') {
-        $airportQuery .= " $order";
+        $airportQuery = $airportQuery . " $order";
     }
 }
 
