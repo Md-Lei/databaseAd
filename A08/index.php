@@ -1,16 +1,15 @@
 <?php
 include("connect.php");
 
-
-$airlineNameFilter = $_GET['airlineName'];
-$aircraftTypeFilter = $_GET['aircraftType'];
-$sort = $_GET['sort'];
-$order = $_GET['order'];
+$airlineNameFilter = $_GET['airlineName'] ?? '';
+$aircraftTypeFilter = $_GET['aircraftType'] ?? '';
+$sort = $_GET['sort'] ?? '';
+$order = $_GET['order'] ?? '';
 
 $airportQuery = "SELECT pilotName, aircraftType, flightNumber, departureDatetime, arrivalDatetime, flightDurationMinutes, airlineName, passengerCount FROM flightlogs";
 
 if ($airlineNameFilter != '' || $aircraftTypeFilter != '') {
-    $airportQuery = $airportQuery ." WHERE";
+    $airportQuery = $airportQuery . " WHERE";
 
     if ($airlineNameFilter != '') {
         $airportQuery = $airportQuery . " airlineName='$airlineNameFilter'";
@@ -83,7 +82,7 @@ $aircraftResults = executeQuery($aircraftQuery);
     <h1 class="top-bar text-white text-left py-4" style="background-color:#000000;"><strong>
             PUP AIRPORT
         </strong>
-     </h1>
+    </h1>
 
     <div class="container">
         <div class="row my-5">

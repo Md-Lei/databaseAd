@@ -201,7 +201,7 @@ $result = executeQuery($query);
 
                   <form method="POST" action="" style="margin-top: 10px;">
                     <input type="hidden" name="userID" value="<?php echo $client['userID']; ?>">
-                    <button type="submit" name="btnDeleteUser" class="btn btn-danger">Delete User</button>
+                    <button type="submit" name="btnDeleteUser" class="btn btn-danger">Delete</button>
                   </form>
 
                 </div>
